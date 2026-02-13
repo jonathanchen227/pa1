@@ -31,7 +31,7 @@ cardList();
 ~cardList();
 
 void insert(Card& card);
-void remove(Card& card);
+void remove(const Card& card);
 bool contains(Card& card);
 void print();
 Node* minimum(Node* n) const;

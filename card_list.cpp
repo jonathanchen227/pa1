@@ -61,8 +61,13 @@ cardList::Node* cardList::findNode(Card& card) {
 bool cardList::contains(Card& card) { return findNode(card) != nullptr; } 
 
 void cardList::print() {
-	for ( auto it = begin(); it != end() ; ++it ) 
-		{std::cout<<*it<<std::endl;}
+    std::function<void(Node*)> inorder = [&](Node* node) {
+        if (!node) return;
+        inorder(node->left);
+        std::cout << node->data << std::endl;
+        inorder(node->right);
+    };
+    inorder(root);
 }
 
 cardList::iterator::iterator(Node* node, const cardList* l ) : current(node),tree(l) {}
@@ -97,7 +102,30 @@ cardList::iterator& cardList::iterator::operator++() {
 	}
 	return * this;
 }
-
+void cardList::remove(const Card& card) {
+	Node* node = findNode(const_cast<Card&>(card));
+	if(!node) {return;}
+	if(node->left && node->right){
+		Node* successor = minimum(node->right);
+		node->data = successor->data;
+		node = successor;
+	}
+	Node* child = nullptr;
+	if(node->left) { child = node->left;}
+	else if ( node->right) {child = node->right;}
+	if(child){	
+		child->parent = node->parent;
+	}
+	if(!node->parent){
+		root= child;
+	}
+	else if (node == node->parent->left){
+		node->parent->left = child;
+	} else {
+		node->parent->right = child;
+	}
+	delete node;
+}
 cardList::iterator& cardList::iterator::operator--() {
 	if (!current) {
 		current = tree -> maximum(tree->root);
