@@ -7,6 +7,7 @@
 #include "card.h"
 #include <iostream>
 #include <sstream>
+
 using namespace std;
 
 int main(int argv, char** argc){
@@ -49,39 +50,39 @@ int main(int argv, char** argc){
   
   bool match = true;
   while (match){
-	match = false;
+	bool aliceMatch = false;
 	for ( auto a = alice.begin(); a != alice.end(); ++a) {
 		if ( bob.find(*a) != bob.end() ) {
                     cout << "Alice picked matching card " << *a << endl;
                     bob.erase(*a);
                     alice.erase(a);
-                    match = true;
+                    aliceMatch = true;
                     break;
 		
 		}
 	}
-        if (!match){
+        if (!aliceMatch){
             break;
         }
-        match = false;
+        bool bobMatch = false;
 	for ( auto b = bob.rbegin(); b != bob.rend(); ++b) {
                if ( alice.find(*b) != alice.end() ) {
                       cout << "Bob picked matching card " << *b << endl;
                       alice.erase(*b);
                       bob.erase(*b);
-                      match = true;
+                      bobMatch = true;
  		      break;
                }
 	}
-        if ( !match) {
+        if ( !bobMatch) {
             break;
         }
 }
- cout << "Alice's final hand:" << endl;
+ cout << "Alice's cards:" << endl;
  for ( const Card& card : alice ) {
       cout << card << endl;
  }
- cout << "Bob's final hand:" << endl;
+ cout << "Bob's cards:" << endl;
  for ( const Card& card : bob ) {
      cout << card << endl;
  }
