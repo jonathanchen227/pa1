@@ -24,7 +24,7 @@ cardList::Node* cardList::maximum(cardList::Node* n) const{
 	while(n->right) n = n->right;
 	return n;
 }
-void cardList::insert(Card& card) {
+void cardList::insert( Card& card) {
 	Node* node = new Node(card);
 	if (root==nullptr) {
            root = node;

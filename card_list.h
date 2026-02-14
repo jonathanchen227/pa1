@@ -30,7 +30,7 @@ public:
 cardList();
 ~cardList();
 
-void insert(Card& card);
+void insert( Card& card);
 void remove(const Card& card);
 bool contains(Card& card);
 void print();

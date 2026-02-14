@@ -60,7 +60,7 @@ bool Card::operator<(const Card& other) const {
         return getValue() < other.getValue();
 }
 
-bool Card::operator==(const Card& other) {
+bool Card::operator==(const Card& other) const{
 	return suit == other.suit && value == other.value;
 }
 

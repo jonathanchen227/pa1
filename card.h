@@ -25,7 +25,7 @@ int getValue() const;
 
 
 bool operator <(const Card& other) const;
-bool operator==(const Card& other);
+bool operator==(const Card& other) const;
 
 friend ostream& operator<<(ostream& os,const Card& c);
 
