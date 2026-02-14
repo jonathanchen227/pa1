@@ -27,8 +27,9 @@ int main(int argv, char** argc){
   }
 
   //Read each file
-  while (getline (cardFile1, line) && (line.length() > 0)){
-        stringstream ss(line);
+  while (getline (cardFile1, line)){
+        if ( line.empty() ) { continue; }
+	stringstream ss(line);
         string suit;
         string value;
         ss >> suit >> value;
@@ -38,7 +39,8 @@ int main(int argv, char** argc){
   cardFile1.close();
 
 
-  while (getline (cardFile2, line) && (line.length() > 0)){
+  while (getline (cardFile2, line)){
+	if ( line.empty() ) { continue;}
         stringstream ss(line);
         string suit;
         string value;
