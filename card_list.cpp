@@ -50,10 +50,12 @@ bool match = true;
                }
         }
 }
- cout << "Alice's cards:" << endl;
+cout<< endl; 
+cout << "Alice's cards:" << endl;
  for ( const Card& card : alice ) {
       cout << card << endl;
  }
+cout<< endl;
  cout << "Bob's cards:" << endl;
  for ( const Card& card : bob ) {
      cout << card << endl;
