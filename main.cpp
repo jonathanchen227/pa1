@@ -50,35 +50,28 @@ int main(int argv, char** argc){
   
 bool match = true;
   while (match){
-        bool aliceMatch = false;
+        match = false;
         for ( auto a = alice.begin(); a != alice.end(); ++a) {
                 if ( bob.contains(*a) ) {
-                    Card& c = *a;
+                    Card c = *a;
 		    cout << "Alice picked matching card " << c << endl;
                     bob.remove(c);
                     alice.remove(c);
-                    aliceMatch = true;
+                    match = true;
                     break;
 
                 }
         }
-        if (!aliceMatch){
-            break;
-        }
-        bool bobMatch = false;
         for (auto b = bob.rbegin(); b != bob.rend(); ++b) {
                if ( alice.contains(*b) ) {
-		      Card& c = *b;
+		      Card c = *b;
                       cout << "Bob picked matching card " << c << endl;
                       alice.remove(c);
                       bob.remove(c);
-                      bobMatch = true;
+                      match = true;
                       break;
                }
         }
-	if(!bobMatch){
-		break;
-	}
 }
  cout << "Alice's cards:" << endl;
  for ( const Card& card : alice ) {

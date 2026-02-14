@@ -61,9 +61,6 @@ int main(int argv, char** argc){
 		
 		}
 	}
-        if (!aliceMatch){
-            break;
-        }
         bool bobMatch = false;
 	for ( auto b = bob.rbegin(); b != bob.rend(); ++b) {
                if ( alice.find(*b) != alice.end() ) {
@@ -74,9 +71,6 @@ int main(int argv, char** argc){
  		      break;
                }
 	}
-        if ( !bobMatch) {
-            break;
-        }
 }
  cout << "Alice's cards:" << endl;
  for ( const Card& card : alice ) {
