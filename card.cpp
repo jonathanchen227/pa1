@@ -64,7 +64,8 @@ bool Card::operator==(const Card& other) const{
 	return suit == other.suit && value == other.value;
 }
 
-ostream& operator<<(ostream& cout, const Card& c) {
-	cout  <<  c.suit << " " << c.value ;
+ostream& operator<<( ostream& cout, const Card& c) {
+	std::cout  <<  c.suit << " " << c.value ;
+	std::cout.flush();
 return cout; 
 }
