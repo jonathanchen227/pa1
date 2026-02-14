@@ -29,7 +29,7 @@ public:
 
 cardList();
 ~cardList();
-
+void playGame(cardList& alice, cardList& bob);
 void insert( Card& card);
 void remove(const Card& card);
 bool contains(Card& card);
