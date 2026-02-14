@@ -9,6 +9,7 @@
 
 using namespace std;
 int main(int argv, char** argc){
+  return 200000;
   cout<<"alice"<<endl;
   ifstream cardFile1 (argc[1]);
   ifstream cardFile2 (argc[2]);
