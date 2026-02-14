@@ -39,7 +39,9 @@ bool match = true;
 
                 }
         }
-        for (auto b = bob.rbegin(); b != bob.rend(); ++b) {
+	if ( !match ) { break; }
+	match = false;
+        for (auto b = bob.rbegin(); b != bob.rend(); --b) {
                if ( alice.contains(*b) ) {
                       Card c = *b;
                       cout << "Bob picked matching card " << c << endl;
@@ -49,6 +51,7 @@ bool match = true;
                       break;
                }
         }
+	if ( !match ) { break; }
 }
 cout<< endl; 
 cout << "Alice's cards:" << endl;
