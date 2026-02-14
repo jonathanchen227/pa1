@@ -11,10 +11,6 @@
 using namespace std;
 
 int main(int argv, char** argc){
-  if(argv < 3){
-    cout << "Please provide 2 file names" << endl;
-    return 1;
-  }
   
   ifstream cardFile1 (argc[1]);
   ifstream cardFile2 (argc[2]);
