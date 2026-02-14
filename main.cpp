@@ -8,9 +8,8 @@
 //Do not include set in this file
 
 using namespace std;
-
 int main(int argv, char** argc){
-  
+  cout<<"alice"<<endl;
   ifstream cardFile1 (argc[1]);
   ifstream cardFile2 (argc[2]);
   cardList alice;

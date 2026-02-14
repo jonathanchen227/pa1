@@ -50,7 +50,7 @@ class iterator {
 	iterator& operator--();
 	bool operator==(const iterator& other) const;
 	bool operator!=(const iterator& other) const;
-	friend class CardList;
+	friend class cardList;
 };
 iterator begin();
 iterator end();
