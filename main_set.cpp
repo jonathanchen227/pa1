@@ -50,24 +50,24 @@ int main(int argv, char** argc){
   
   bool match = true;
   while (match){
-	bool aliceMatch = false;
+	match = false;
 	for ( auto a = alice.begin(); a != alice.end(); ++a) {
 		if ( bob.find(*a) != bob.end() ) {
                     cout << "Alice picked matching card " << *a << endl;
                     bob.erase(*a);
                     alice.erase(a);
-                    aliceMatch = true;
+                    match = true;
                     break;
 		
 		}
 	}
-        bool bobMatch = false;
+        match = false;
 	for ( auto b = bob.rbegin(); b != bob.rend(); ++b) {
                if ( alice.find(*b) != alice.end() ) {
                       cout << "Bob picked matching card " << *b << endl;
                       alice.erase(*b);
                       bob.erase(*b);
-                      bobMatch = true;
+                      match = true;
  		      break;
                }
 	}
