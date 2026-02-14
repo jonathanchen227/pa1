@@ -2,7 +2,7 @@
 // Author: Jonathan Chen
 // Implementation of the classes defined in card_list.h
 #include "card_list.h"
-
+#include <functional>
 cardList::cardList(): root(nullptr) {} 
 
 cardList::~cardList() { destroy(root); }

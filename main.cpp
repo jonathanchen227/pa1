@@ -7,15 +7,16 @@
 #include "card_list.h"
 //Do not include set in this file
 using namespace std;
-int main(int argv, char** argc){
-  ifstream cardFile1 (argc[1]);
-  ifstream cardFile2 (argc[2]);
+int main(int argc, char** argv){
+  if ( argc < 3 ) { cout << "not enough arguments" << endl; return 1; }
+  ifstream cardFile1 (argv[1]);
+  ifstream cardFile2 (argv[2]);
   cardList alice;
   cardList bob;  
   string line;
 
   if (cardFile1.fail() || cardFile2.fail() ){
-    cout << "Could not open file " << argc[2];
+    cout << "Could not open file " << argv[2];
     return 1;
   }
 

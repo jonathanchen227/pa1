@@ -10,14 +10,14 @@
 
 using namespace std;
 
-int main(int argv, char** argc){
+int main(int argc, char** argv){
   
-  ifstream cardFile1 (argc[1]);
-  ifstream cardFile2 (argc[2]);
+  ifstream cardFile1 (argv[1]);
+  ifstream cardFile2 (argv[2]);
   string line;
 
   if (cardFile1.fail() || cardFile2.fail() ){
-    cout << "Could not open file " << argc[2];
+    cout << "Could not open file " << argv[2];
     return 1;
   }
   
