@@ -33,7 +33,7 @@ void playGame(cardList& alice, cardList& bob);
 void insert( Card& card);
 void remove(const Card& card);
 bool contains(Card& card);
-void print();
+void print(Node* n);
 Node* minimum(Node* n) const;
 Node* maximum(Node* n) const;
 Node* findNode(Card& card);

@@ -100,14 +100,11 @@ cardList::Node* cardList::findNode(Card& card) {
 }
 bool cardList::contains(Card& card) { return findNode(card) != nullptr; } 
 
-void cardList::print() {
-    std::function<void(Node*)> inorder = [&](Node* node) {
-        if (!node) return;
-        inorder(node->left);
-        std::cout << node->data << std::endl;
-        inorder(node->right);
-    };
-    inorder(root);
+void cardList::print(Node* head) {
+        if (!head) return;
+        print(head->left);
+        cout << head->data << endl;
+        print(head->right);
 }
 
 cardList::iterator::iterator(Node* node, const cardList* l ) : current(node),tree(l) {}
@@ -199,6 +196,5 @@ cardList::iterator cardList::rbegin() {
 }
 cardList::iterator cardList::rend() {
 	return iterator(nullptr,this);
-}
-	
+}	
 
